@@ -1,0 +1,625 @@
+@import url('https://googleapis.com');
+
+/*I might play around with weird stuff that is unexpected like font weight and all that, 
+just because of my ocd for design, I am writing this comment after realising 
+how precisely correct I wanted my font in the boarding pass, 
+so yea ITS NOT AI, JUST MY IRRITATION :)*/
+
+/*Another important point, the background used are svg illustrations
+that I do not claim to be mine, just found it cool so used it, 
+kindly treat is as any other background "animated video" PLS PLS*/
+
+/* Hero Section CSS */
+.hero-body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: url(assets/hero.svg);
+    background-size: cover;
+    background-position: center;
+}
+
+.bar {
+    height: 20%;
+    width: 2%;
+    background-color: #b4b2a9;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.3);
+}
+
+#left {
+    left: 30%;
+}
+
+#right {
+    right: 30%;
+}
+
+.hero {
+    height: 50%;
+    width: 50%;
+    background-color: #3d2d53;
+    border: 5px solid #f4c95d;
+    border-radius: 30px;
+    box-shadow: 0 0 0 1px #000000;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #f5f1e8;
+    text-align: center;
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.25),
+        0 12px 24px rgba(0, 0, 0, 0.30),
+        0 32px 64px rgba(0, 0, 0, 0.35);
+}
+
+#sia {
+    font-family: "Google Sans Flex", sans-serif;
+    font-size: 45px;
+}
+
+#welcome {
+    font-family: "Open Sans", sans-serif;
+    font-weight: lighter;
+    font-size: 35px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.btn {
+    background-color: #262040;
+    border: 3px solid #f4c95d;
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px #000000;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #f5f1e8;
+    font-size: 20px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: lighter;
+    cursor: pointer;
+}
+
+#icon {
+    color: #f4c95d;
+    border: 3px #f4c95d solid;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 35px;
+}
+
+#arrow {
+    background-color: #f4c95d;
+    color: #000000;
+    border-radius: 100%;
+    font-size: 50px;
+}
+
+.button-text {
+    font-size: 30px;
+    color: #f4c95d;
+}
+
+/* About Section CSS */
+.about-body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: url(assets/about.svg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.boarding-pass {
+    width: 80%;
+    height: 60%;
+    background: white;
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: 2fr 3px 1fr;
+    grid-template-rows: 1fr 4fr;
+    overflow: hidden;
+    transform: scale(0.75);
+    transform-origin: center;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+.top-bar-left {
+    grid-column: 1;
+    grid-row: 1;
+    background-color: #131a2e;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.airline-logo {
+    font-size: 50px;
+    color: #f4c95d;
+    margin-left: 20px;
+}
+
+.top-left-head {
+    font-family: "Google Sans Flex", sans-serif;
+    font-size: 35px;
+    color: #f4c95d;
+}
+
+.top-bar-right {
+    grid-column: 3;
+    grid-row: 1;
+    background-color: #131a2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.top-right-head {
+    font-family: "Google Sans Flex", sans-serif;
+    font-size: 35px;
+    color: #f4c95d;
+}
+
+.body-left {
+    grid-column: 1;
+    grid-row: 2;
+    background-color: #fffbf2;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 9fr;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.barcode {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    padding-left: 12px;
+    gap: 2px;
+}
+
+.info {
+    grid-column: 2;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "name role education"
+        "school dream-company experience";
+    gap: 10px;
+    padding: 10px;
+}
+
+.info-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 10%;
+    padding-left: 5%;
+    flex-direction: column;
+    gap: 0px;
+    font-family: "Google Sans Flex", sans-serif;
+}
+
+.info-label {
+    margin: 0;
+    font-weight: 1;
+    color: #64748B; /*It looks like lighter weight, not intended for "color" change*/
+    letter-spacing: 7%; /*Not AI, I genuinely didnt like the default spacing :(*/
+}
+
+.info-value {
+    margin: 0;
+}
+
+
+#name {
+    grid-area: name;
+}
+
+#role {
+    grid-area: role;
+}
+
+#education {
+    grid-area: education;
+}
+
+#school {
+    grid-area: school;
+}
+
+#dream-company {
+    grid-area: dream-company;
+}
+
+#experience {
+    grid-area: experience;
+}
+
+.bottom-half {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.about-para {
+    width: 100%;
+    height: 100%;
+}
+
+.para {
+    font-family: "Google Sans Flex", sans-serif;
+    margin: 0;
+    padding-left: 1%;
+}
+
+#para-content {
+    padding-top: 1%;
+}
+
+.bottom-left {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body-right {
+    grid-column: 3;
+    grid-row: 2;
+    background-color: #fffbf2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sep-rod {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    background-color: #fffbf2;
+    border: 10px dashed black;
+}
+
+#linkedin {
+    width: 80%;
+    height: 80%;
+}
+
+.wide-line {
+    width: 80%;
+    height: 1%;
+    background-color: #000000;
+}
+
+.narrow-line {
+    width: 80%;
+    height: 0.5%;
+    background-color: #000000;
+}
+
+.barcode-horizontal {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+.wide-vert {
+    width: 0.7%;
+    height: 70%;
+    background-color: #000000;
+}
+
+.narrow-vert {
+    width: 0.5%;
+    height: 70%;
+    background-color: #000000;
+}
+
+.bottom-left>div {
+    min-width: 30%;
+}
+
+.easter-egg {
+    color: #fffbf2;
+    font-family: "Google Sans Flex", sans-serif;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.easter-egg:hover {
+    color: black;
+    cursor: pointer;
+    transition: 1s;
+}
+
+/* Skills Section CSS */
+
+
+
+.skills-body {
+    margin: 0;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('assets/skills.png');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.tv-screen {
+    width: 50%;
+    max-height: 50%;
+    background-color: #0d1321;
+    margin-bottom: 50px;
+    border-radius: 6px;
+    padding: 24px 28px;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6);
+    font-family: "Google Sans Flex", sans-serif;
+}
+
+.board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #5f5e5a;
+}
+
+.board-title {
+    color: #f4c95d;
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 16px;
+}
+
+.board-sub {
+    color: #b4b2a9;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.board-table {
+    width: 100%;
+    font-size: 15px;
+}
+
+th {
+    text-align: left;
+    color: #b4b2a9;
+    letter-spacing: 1.5px;
+    font-size: 10px;
+    padding: 0 10px 10px;
+}
+
+td {
+    padding: 10px;
+    color: white;
+}
+
+.light {
+    background-color: #131a2e;
+}
+
+.code {
+    font-weight: 700;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.on-time {
+    background: #97c459;
+    color: #173404;
+}
+
+.boarding {
+    background: #fac775;
+    color: #412402;
+}
+
+.delayed {
+    background: #f09595;
+    color: #501313;
+}
+
+/* Navigation Bar CSS */
+.site-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #0d1321;
+    border-bottom: 3px solid #f4c95d;
+    box-sizing: border-box;
+    font-family: "Google Sans Flex", sans-serif;
+}
+
+.nav-brand {
+    color: #f4c95d;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.nav-brand span {
+    color: #b4b2a9;
+    letter-spacing: 2px;
+    margin-left: 10px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #f5f1e8;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #f4c95d;
+}
+
+/* Contact Bar */
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 19, 33, 0.85);
+    justify-content: center;
+    align-items: center;
+}
+
+#contact-popup:target {
+    display: flex;
+}
+
+.popup-card {
+    position: relative;
+    background: #131a2e;
+    border: 2px solid #f4c95d;
+    border-radius: 12px;
+    padding: 36px 32px;
+    width: 500px;
+    text-align: center;
+    color: #f5f1e8;
+}
+
+.popup-card h2 {
+    margin: 0 0 10px;
+}
+
+.popup-card p {
+    color: #b4b2a9;
+    font-size: 14px;
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    color: #b4b2a9;
+    text-decoration: none;
+}
+
+.popup-close:hover {
+    color: #f4c95d;
+}
+
+.belt {
+    position: relative;
+    overflow: hidden;
+    background: #1e1e1c;
+    border-top: 4px solid #f4c95d;
+    border-bottom: 4px solid #f4c95d;
+    padding: 18px 0;
+    margin-top: 16px;
+    border-radius: 6px;
+    
+}
+
+.belt-track {
+    display: flex;
+    width: max-content;
+    animation: roll 14s linear infinite;
+    will-change: transform;
+}
+
+.belt-group {
+    display: flex;
+    gap: 24px;
+    padding-right: 24px;
+    flex-shrink: 0;
+}
+
+@keyframes roll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.bag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background: #fffbf2;
+    color: #131a2e;
+    text-decoration: none;
+}
+
+.bag:hover {
+    transform: translateY(-5px) scale(1.08);
+    background: #f4c95d;
+    border-color: #e5b84c;
+}
